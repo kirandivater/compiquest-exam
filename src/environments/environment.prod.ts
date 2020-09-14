@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  GlobalUrl: "https://compiquest-exam-nodeapis-sql.herokuapp.com/"
 };
