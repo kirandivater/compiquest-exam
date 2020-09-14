@@ -18,9 +18,10 @@ export class LoginComponent implements OnInit {
     this.loginModel.Username = Username; //"CQGargotiv";
     this.loginModel.Password = Password; //"Mashal@2324";
 
-    alert(Username);
-    this.loginService.CheckLogin(this.loginModel).subscribe(Response => {
+    console.log(this.loginModel);
 
+    this.loginService.CheckLogin(this.loginModel).subscribe(Response => {
+      console.log(Response);
     }, error => {
       alert(JSON.stringify(error));
     }, () => {

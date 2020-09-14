@@ -12,16 +12,28 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginService } from './_Services/login.service';
 import { Login } from './_Model/login';
+import { Methods } from './_Model/methods';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    HttpClientModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },
-    LoginService, Login
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+
+    //Services
+    LoginService, 
+    
+    //Classes
+    Login,
+    Methods
   ],
   bootstrap: [AppComponent]
 })
