@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: center;">
+      Compiquest Exam App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container" class="col-md-12 row"
+    style="height: 100%; margin-left: 0px; margin-right: 50px; margin-top: 0px;background-image: url('assets/img/loginbg/Colorful-Fashion.jpg');">
+    <!-- <div class="col-md-5 col-sm-5 col-xs-5">
+      Login Here!
+    </div> -->
+    <div class="col-md-5 col-sm-5 col-xs-5 login" style="margin-bottom: 10px;height: 358px;">
+           <ion-row>
+        <ion-col>
+          <ion-item lines="full">
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" required #username id="username"></ion-input>
+          </ion-item>
+
+          <ion-item lines="full">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" required #pwd id="pwd"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+         <ion-button (click)="CheckLogin(username.value, pwd.value)"> Login</ion-button>
+            <!-- <input type="button" id="btnLogin" class="btn btn-success" value="Login"
+              (click)="Login(username.value, pwd.value)"> -->
+          
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p style="text-align: right; color: #fff;">
+            <a routerLink="#">Forgot Password</a>
+          </p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

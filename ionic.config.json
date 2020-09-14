@@ -1,7 +1,9 @@
 {
-  "name": "compiquest-exam-app",
+  "name": "CompiquestApp",
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "v2": true,
+  "typescript": true
 }
