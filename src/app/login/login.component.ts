@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from '../_Model/login';
 import { LoginService } from '../_Services/login.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -15,17 +16,28 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   CheckLogin(Username, Password) {
-    this.loginModel.Username = Username; //"CQGargotiv";
-    this.loginModel.Password = Password; //"Mashal@2324";
+    $('#btnlogin').css('display', 'none');
 
-    console.log(this.loginModel);
+    this.loginModel.Username = Username;
+    this.loginModel.Password = Password;
+
+    //this.loginModel.Username = "CQGargoti";
+    //this.loginModel.Password = "Mashal@2324";
 
     this.loginService.CheckLogin(this.loginModel).subscribe(Response => {
-      console.log(Response);
+      let data = JSON.parse(JSON.stringify(Response));
+
+      if(data.recordset.length > 0) {
+        this.route.navigate(['/', 'home']);
+      } else {
+        alert('User name or password incorrect');
+      }
+
+      $('#btnlogin').css('display', 'block');
     }, error => {
       alert(JSON.stringify(error));
     }, () => {
-      this.route.navigate(['/', 'home']);
+      
     });
   }
 }
