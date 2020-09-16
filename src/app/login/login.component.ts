@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         alert('User name or password incorrect');
       }
 
-      $('#btnlogin').css('display', 'block');
+      $('#btnlogin').css('display', 'inline-block');
     }, error => {
       alert(JSON.stringify(error));
     }, () => {
